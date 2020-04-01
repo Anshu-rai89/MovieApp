@@ -1,7 +1,10 @@
 import React from 'react';
+
+
 import Navbar from './navbar';
 import {data} from '../data';
 import MovieCard  from './movieCard';
+import { addMovie } from "../action/index";
 
 class  App extends React.Component {
 
@@ -17,12 +20,7 @@ class  App extends React.Component {
       this.forceUpdate();
     });
 
-    store.dispatch(
-      {
-        type:'ADD_MOVIE',
-        movie:data
-      }
-    );
+    store.dispatch(addMovie(data));
 
 
     console.log('state',store.getState());
