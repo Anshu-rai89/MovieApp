@@ -1,4 +1,5 @@
 
+
 // action types 
 
 
@@ -10,9 +11,9 @@ export const ADD_MOVIES='ADD_MOVIES';
 
 export function addMovie(movie)
 {
-    return 
-    {
-        type:ADD_MOVIES,
-        movie
+    let obj={type:ADD_MOVIES,
+          movie
     }
+
+    return obj;
 }
