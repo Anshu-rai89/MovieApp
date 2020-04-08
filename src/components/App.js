@@ -28,6 +28,7 @@ class  App extends React.Component {
   render(){
 
     console.log('render');
+    console.log('state',this.props.store.getState());
     const {list}=this.props.store.getState();
       return (
         <div className="App">
