@@ -9,19 +9,6 @@ import { addMovie } from "../action/index";
 class  App extends React.Component {
 
 
-  isMovieFavorite= (movie)=>
-  {
-    const {favorite}=this.props;
-
-    const index=favorite.indexOf(movie);
-
-    if(index!=-1)
-    {
-      return true;
-    }
-
-    return false;
-  }
   componentDidMount()
   {
     const {store}=this.props;
@@ -38,6 +25,22 @@ class  App extends React.Component {
 
 
     console.log('state',store.getState());
+
+
+  }
+
+  isMovieFavorite= (movie)=>
+  {
+    const {favourite}=this.props.store.getState();
+
+    const index=favourite.indexOf(movie);
+
+    if(index!=-1)
+    {
+      return true;
+    }
+
+    return false;
   }
   render(){
 
