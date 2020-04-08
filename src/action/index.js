@@ -6,6 +6,7 @@
 export const ADD_MOVIES='ADD_MOVIES';
 export const ADD_FAVORITE='ADD_FAVORITE';
 export const REMOVE_FROM_FAVORITE='REMOVE_FROM_FAVORITE';
+export const SHOW_FAVORITE='SHOW_FAVORITE';
 
 
 
@@ -39,5 +40,13 @@ export function removeFavorite(movie)
     return obj;
 }
 
+export function showFavorite(val)
+{
+    let obj={type:SHOW_FAVORITE,
+        val
+    }
+
+    return obj;
+}
 
 

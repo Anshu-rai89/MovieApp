@@ -1,8 +1,12 @@
-import {ADD_MOVIES,ADD_FAVORITE,REMOVE_FROM_FAVORITE}  from '../action/index';
+import {ADD_MOVIES,
+        ADD_FAVORITE,
+        REMOVE_FROM_FAVORITE,
+        SHOW_FAVORITE}  from '../action/index';
 
 const intialState={
     list:[],
-    favourite:[]
+    favourite:[],
+    showFavorite:false
 }
 export default function(state=intialState,action)
 {
@@ -28,6 +32,12 @@ export default function(state=intialState,action)
                 ...state,
                 favourite:filteredFavorite
             }
+
+        case SHOW_FAVORITE:
+            return {
+                ...state,
+                showFavorite:action.val
+            } 
         default:
             return state;
     }
