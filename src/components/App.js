@@ -8,6 +8,20 @@ import { addMovie } from "../action/index";
 
 class  App extends React.Component {
 
+
+  isMovieFavorite= (movie)=>
+  {
+    const {favorite}=this.props;
+
+    const index=favorite.indexOf(movie);
+
+    if(index!=-1)
+    {
+      return true;
+    }
+
+    return false;
+  }
   componentDidMount()
   {
     const {store}=this.props;
@@ -43,7 +57,12 @@ class  App extends React.Component {
             <div  className='list'>
               
               {list.map((movie,index)=>
-                  <MovieCard  movie={movie} key={`movie-${index}`} dispatch={this.props.store.dispatch}/>
+                  <MovieCard
+                   movie={movie} 
+                   key={`movie-${index}`}
+                   dispatch={this.props.store.dispatch}
+                   isFavorite={this.isMovieFavorite(movie)}
+                   />
               )}
             </div>
         </div>
