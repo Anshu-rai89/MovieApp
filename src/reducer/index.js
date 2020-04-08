@@ -17,7 +17,7 @@ export default function(state=intialState,action)
         case ADD_FAVORITE:
                 return {
                     ...state,
-                    favourite:action.favourite
+                    favourite:[action.movie,...state.favourite]
                 }
         default:
             return state;
