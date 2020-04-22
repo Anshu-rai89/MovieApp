@@ -20,8 +20,10 @@ class MovieCard extends React.Component
     {
         const {movie,isFavorite}=this.props;
         return (
-            <div className="movie-card">
 
+
+            <div className="movie-card">
+               
                 <div className='left'>
                    <img alt='movie-poster' src={movie.Poster}  />
                 </div>
