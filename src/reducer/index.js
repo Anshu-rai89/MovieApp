@@ -63,8 +63,8 @@ export default function rootReducer(state,action)
 {
     return
     {  
-        search:search(state,action)
-        movies:movies(state,action)
+        search:search(state.movies,action)
+        movies:movies(state.search,action)
         
     }
 }
