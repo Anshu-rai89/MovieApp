@@ -3,12 +3,12 @@ import {ADD_MOVIES,
         REMOVE_FROM_FAVORITE,
         SHOW_FAVORITE}  from '../action/index';
 
-const intialState={
+const intialMovieState={
     list:[],
     favourite:[],
     showFavorite:false
 }
-export default function(state=intialState,action)
+export function movies(state=intialMovieState,action)
 {
     
     switch(action.type)
@@ -43,4 +43,28 @@ export default function(state=intialState,action)
     }
 
    
+}
+
+const initialSearchState={
+    result:{}
+}
+
+export function search(state=initialSearchState,action)
+{
+     return state;
+}
+
+const initialState=
+{
+    movies:intialMovieState,
+    search:initialSearchState
+}
+export default function rootReducer(state,action)
+{
+    return
+    {  
+        search:search(state,action)
+        movies:movies(state,action)
+        
+    }
 }
